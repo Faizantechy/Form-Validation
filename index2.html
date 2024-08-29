@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation In JavaScript</title>
+
+    <style>
+
+        body{
+
+            background-color: rgb(0, 238, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+
+        .form-container{
+
+            background-color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        input{
+
+            width: 180px;
+            padding: 8px;
+            margin: 10px;
+        }
+
+        input[type='submit']{
+
+            background-color:rgb(0, 238, 255); 
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+
+    
+
+        }
+
+        .submit:hover{
+
+background-color:rgb(25, 170, 181); 
+transform: scale(0.95);
+
+}
+
+        p{
+
+            color: red;
+            font-weight: bold;
+            margin: 0px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+       
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+
+        <div class="form-container">
+
+            <h2>Login Form</h2>
+
+            <form action="" onsubmit="return validateForm()">
+
+            <input type="text" placeholder="Username" class="username">
+
+            <br>
+            <p class="userError"></p>
+
+            <input type="password" placeholder="password" class="password">
+
+            <br>
+
+            <p class="passwordError"></p>
+
+
+
+            <input type="submit" class="submit">
+
+
+        </form>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        const username=document.querySelector('.username')
+        const password=document.querySelector('.password')
+        console.log(password.value)
+        const submit=document.querySelector('.submit')
+        const userError=document.querySelector('.userError')
+        const passwordError=document.querySelector('.passwordError')
+
+
+
+
+function validateForm(){
+
+    if(username.value==''){
+
+        userError.textContent='*Empty Username'
+        return false;
+
+    }
+
+
+    else if(username.value.length <3){
+
+        userError.textContent='*Username Must Be More than 3 Characters'
+        return false;
+    } 
+
+    if(password.value==''){
+        passwordError.textContent='*Empty Password'
+        return false;
+
+    }
+  
+
+    else if(password){
+
+        console.log(password);
+        
+
+// passwordError.textContent='*Password Must Be More than 10 Characters'
+return false;
+} 
+
+}
+
+
+    </script>
+    
+</body>
+</html>
